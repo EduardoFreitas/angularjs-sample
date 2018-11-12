@@ -1,0 +1,17 @@
+<h2><a href="#/">Back to Search</a></h2>
+
+
+Forecast for {{ city }}
+<hr/>
+Hours: <a href="#/forecast/2" ng-class="{'bg-primary': hours === '2'}">2</a> | <a href="#/forecast/5"
+                                                                                  ng-class="{'bg-primary': hours === '5'}">5</a> |
+<a href="#/forecast/7" ng-class="{'bg-primary': hours === '7'}">7</a>
+<hr/>
+<div ng-repeat="w in weatherResult.list">
+    <div class="row">
+        <div class="col-md-12">
+            <weather-report weather-hour="w" convert-to-standard="convertToCelsius(hourTimeTemp)"
+                            convert-to-date="convertToDate(dt)" date-format="MMM d, y HH:mm:ss"></weather-report>
+        </div>
+    </div>
+</div>
